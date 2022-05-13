@@ -51,7 +51,7 @@ function ausgabeNamenParams(firstName,familyName) {
 // Postulat: one function = one job (uncle Bob)
 // SRP single responsibility principle
 
-ausgabeNamenParams2("Maxine","Mützerich");
+// ausgabeNamenParams2("Maxine","Mützerich");
 
 function ausgabeNamenParams2(firstName,familyName) {
     // 1 job: composing
@@ -59,3 +59,23 @@ function ausgabeNamenParams2(firstName,familyName) {
     // 2. job: output
     console.log(str);
 }
+
+/***** Funktionen 03b *****/
+// Trennen der Funktionalitäten | return
+
+// 1. Funktionalität: string composing
+output(getString("Maxine","Mützerich"));
+function getString(firstName,familyName) {
+    let str = "Hallo " + firstName + " " + familyName + "!";
+    return str;
+    output("Test"); // return BEENDET eine Funktion!
+}
+
+// 2. Funktionalität: data output
+// output("Test");
+function output(outputData) {
+    console.log(outputData); 
+}
+
+// Fazit:   Funktionen sind gekapselte, modulare
+//          VERANTWORTLICHKEITEN! 
